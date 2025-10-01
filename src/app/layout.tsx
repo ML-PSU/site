@@ -1,11 +1,15 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { PT_Serif } from 'next/font/google'
 import './globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 
-const inter = Inter({ subsets: ['latin'] })
+const ptSerif = PT_Serif({ 
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'ML@PSU',
@@ -42,7 +46,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={ptSerif.className}>
         <Navbar />
         <main className="pt-16">
           {children}
