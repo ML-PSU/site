@@ -340,7 +340,7 @@ export default function Home() {
           >
             <h2 className="text-2xl font-bold">Our Team</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {staff.map((member) => ( // Iterates over every staff member
+              {staff.map((member) => (
                 <div key={member.name} className="flex items-center gap-4">
                   <Image
                     src={member.image}
