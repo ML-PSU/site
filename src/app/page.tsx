@@ -8,13 +8,14 @@ import { motion, useScroll, useTransform, useInView } from 'framer-motion'
 
 const staff = [
   { name: 'Pranav Karra', role: 'Founder & President', link: 'https://pranavkarra.me', image: '/team/pranav.jpeg' },
-  { name: 'Vanisha Gupta', role: 'Vice President', link: 'https://www.linkedin.com/in/vanishagupta/', image: '/team/vanisha.jpeg' },
-  { name: 'Krishna Pagrut', role: 'Tech Lead', link: 'https://www.linkedin.com/in/krishnapagrut/', image: '/team/krishna.jpeg' },
-  { name: 'Pihu Agarwal', role: 'Secretary', link: 'https://www.linkedin.com/in/pihuagarwal/', image: '/team/pihu.jpeg' },
+  { name: 'Evan Sinocchi', role: 'Vice President', link: 'https://www.linkedin.com/in/esinocchi/', image: '/team/evan.jpg' },
   { name: 'Manit Garg', role: 'Treasurer', link: 'https://www.linkedin.com/in/manitgarg/', image: '/team/manit.jpeg' },
-  { name: 'Evan Sinocchi', role: 'Software Engineer', link: 'https://www.linkedin.com/in/esinocchi/', image: '/team/evan.jpg' },
-  { name: 'Dhruva Nagesh', role: 'Software Engineer', link: 'https://www.linkedin.com/in/dhruva-nagesh', image: '/team/dhruvah.jpeg' },
-  { name: 'Andre Marinak', role: 'Outreach Chair', link: 'https://www.linkedin.com/in/andremarinak/', image: '/team/andre.jpeg'}
+  { name: 'Dhruva Nagesh', role: 'Technical Staff', link: 'https://www.linkedin.com/in/dhruva-nagesh', image: '/team/dhruva.jpeg' },
+  { name: 'Arshawn Vossoughi', role: 'Technical Staff', link: 'https://www.linkedin.com/in/arshvoss/', image: '/team/Arshawn.jpg' },
+  { name: 'Jacob Meert', role: 'Technical Staff', link: 'https://www.linkedin.com/in/jacob-meert/', image: '/team/jacob.jpg' },
+  { name: 'Kasra Ghadimi', role: 'Technical Staff', link: 'https://www.linkedin.com/in/kasraghadimi/', image: '/team/Kasra.jpg' },
+  { name: 'Billy Richardt', role: 'Technical Staff', link: 'https://www.linkedin.com/in/williamrichardtiv/', image: '/team/billy.jpg' },
+  { name: 'Ishaan Narang', role: 'Event Planner', link: 'https://www.linkedin.com/in/ishaannarang22/', image: '/team/ishaan.jpg' }
 ]
 
 const pastSpeakers = [
@@ -364,10 +365,10 @@ export default function Home() {
                     className="rounded-full object-cover w-16 h-16 hover:scale-105 transition-transform"
                   />
                   <div className="space-y-2">
-                    {member.name === 'Ian Yee' ? ( // Start of Ian Yee's link modification
-                      <span className="text-lg">{member.name}</span> // Removed text-white class
+                    {!member.link ? (
+                      <span className="text-lg">{member.name}</span>
                     ) : (
-                      <Link // Link for other members if not Ian Yee
+                      <Link
                         href={member.link} 
                         target="_blank" 
                         rel="noopener noreferrer" 
