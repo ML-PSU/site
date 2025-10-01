@@ -1,0 +1,154 @@
+# ML@PSU Development Rules
+
+## Project Overview
+This is the ML@PSU website built with Next.js, TypeScript, and Tailwind CSS. Follow these guidelines for all development work.
+
+## Git Commit Conventions
+
+### Commit Message Prefixes
+- `chore`: Routine/automated tasks (e.g., upgrading dependencies)
+- `deprecate`: Deprecating functionality
+- `feat`: Adding new functionality
+- `fix`: Fixing bugs/errors
+- `release`: Release-related commits
+- `refactor`: Refactoring or reformatting code
+
+### Commit Message Format
+Use past tense after the prefix to describe what you've done:
+- `feat(component): Added X to improve user experience`
+- `fix(api): Fixed Y to resolve API errors`
+
+### Important Git Notes
+- Use `git commit --amend` for local commits before pushing to keep commits granular
+- NEVER amend commits that are already public (it breaks git history)
+- Always ensure code builds (`npm run build`) before committing/pushing - dev mode working doesn't guarantee build success
+
+## Pull Request Guidelines
+
+### PR Title Format
+- Prefix with commit type (feat, fix, etc.)
+- Make title descriptive of changes
+- Example: `feat(team-page): Added new team members and updated roles`
+
+### PR Description Structure
+1. **Summary**: Brief one-paragraph overview of the PR
+2. **Detailed Changes**: Bullet points explaining:
+   - What was changed
+   - Results/impact of the change
+   - Link to important files if needed
+3. **Environment Variables**: If `.env` variables were added, document them in a subsection
+4. **Review**: Request GitHub Copilot to review the PR
+
+### Branch Naming
+Follow same conventions as commit messages:
+- `feat/feature-name`
+- `fix/bug-description`
+- `refactor/component-name`
+
+## Design Guidelines (Optional - from Pranav)
+
+### Color Palette
+
+#### Light Theme
+- Background: `#faf9f7`
+- Surface: `#ffffff`
+- Text: `#37352f`
+- Accent: `#c09456`
+
+#### Dark Theme
+- Background: `#000000`
+- Surface: `#121212`
+- Text: `#e8e7e3`
+- Accent: `#ffd4a3`
+
+### Typography
+- **Primary Font**: Patrick Hand (Google Fonts) - handwritten style
+- **Monospace Font**: JetBrains Mono - for code blocks
+- **Scale**: Custom type scale from 16px to 56px
+- **Case**: All text is lowercase by default (`text-transform: lowercase`)
+
+### Responsive Design
+
+#### Breakpoints
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
+
+### UI/UX Patterns
+
+#### Animations
+- Staggered animations using CSS custom properties
+- CSS keyframes for smooth entrance effects
+- Respects reduced motion preferences
+- Use CSS transforms over position changes
+- Apply `will-change` property for smooth animations
+
+#### Hover Interactions
+- Subtle transform effects (rotations, scaling)
+- Color transitions on interactive elements
+- Box shadow enhancements for depth
+
+#### Navigation
+- Table of Contents fixed on left (desktop only)
+- Intersection Observer for active section tracking
+- Auto-hiding on mobile
+- Smooth scrolling navigation
+
+## Code Architecture
+
+### CSS Architecture
+- Design system first approach with base.css
+- CSS custom properties for theming
+- Minimal Tailwind usage (being phased out)
+- Component-scoped styles when needed
+
+### State Management
+- React hooks for local state
+- localStorage for theme persistence
+- Context-free architecture (no global state)
+
+### Performance Optimization
+
+#### Image Optimization
+- Use Next.js Image component for automatic optimization
+- Proper sizing and aspect ratios
+- Lazy loading for better performance
+
+#### Bundle Size
+- Component-based architecture for code splitting
+- CSS custom properties over runtime theme switching
+- Selective imports from icon libraries
+
+#### Performance Monitoring
+- Vercel Analytics integration
+- Core Web Vitals optimization
+- Bundle analysis capabilities
+
+### Accessibility
+
+#### Screen Reader Support
+- Semantic HTML structure
+- ARIA labels on interactive elements
+- Alternative text for all images
+
+## Development Workflow
+
+### Before Pushing/PRs
+1. Run `npm run build` to ensure code compiles without errors
+2. Test all functionality in dev mode (`npm run dev`)
+3. Verify no linter errors
+4. Check for console errors/warnings
+
+### Code Quality
+- Don't spend too much time on perfection - iterate quickly
+- Follow existing code patterns and structure
+- Keep components modular and reusable
+- Document complex logic with comments
+
+## Team Member Updates
+When updating team members in `src/app/page.tsx`:
+- Update the `staff` array with proper name, role, LinkedIn link, and image path
+- Ensure team photos are in `public/team/` directory
+- Verify image extensions match the code (.jpg vs .jpeg)
+- Handle members without links (display as plain text instead of clickable)
+

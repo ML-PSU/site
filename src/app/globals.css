@@ -5,8 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-rgb: 0, 0, 0;
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
 }
 
 body {
@@ -24,40 +24,12 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(calc(-33.33% - 3rem));
   }
 }
 
-.scrolling-text {
-  white-space: nowrap;
-  animation: scroll 60s linear infinite;
-  display: inline-block;
-  color: rgba(255, 255, 255, 0.6);
-}
 
-.scrolling-container {
-  width: 100%;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(8px);
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
 
-.hover-glow {
-  display: inline-block;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.hover-glow:hover {
-  color: rgba(255, 255, 255, 1);
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-  transform: scale(1.05) translateY(-1px);
-}
 
 .link-style {
   position: relative;
@@ -65,7 +37,7 @@ body {
   align-items: center;
   text-decoration: none;
   padding-right: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .link-style::after {
@@ -78,21 +50,21 @@ body {
 }
 
 .link-style:hover {
-  border-bottom-color: rgba(255, 255, 255, 0.8);
+  border-bottom-color: rgba(0, 0, 0, 0.8);
 }
 
 .join-button {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  background: rgba(0, 0, 0, 0.1);
+  color: black;
   padding: 0.75rem 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
 }
 
 .join-button:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
 
@@ -109,7 +81,153 @@ body {
 
 @layer components {
   h1 {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     letter-spacing: -0.04em;
   }
+}
+
+
+/* Button animations */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes discordGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes groupmeGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes calendarGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.btn-ml-gradient {
+  background: linear-gradient(120deg, #ff758c, #ff7eb3, #ff7eb3, #ff758c);
+  background-size: 300% 300%;
+  animation: gradientFlow 8s ease infinite;
+  transition: all 0.3s ease;
+}
+
+.btn-discord-gradient {
+  background: linear-gradient(120deg, #5865F2, #4752C4, #7289DA, #5865F2);
+  background-size: 300% 300%;
+  animation: discordGradient 8s ease infinite;
+  transition: all 0.3s ease;
+}
+
+.btn-groupme-gradient {
+  background: linear-gradient(120deg, #00AFF0, #0095cc, #00c3ff, #00AFF0);
+  background-size: 300% 300%;
+  animation: groupmeGradient 8s ease infinite;
+  transition: all 0.3s ease;
+}
+
+.btn-calendar-gradient {
+  background: linear-gradient(120deg, #9333ea, #7e22ce, #a855f7, #9333ea);
+  background-size: 300% 300%;
+  animation: calendarGradient 8s ease infinite;
+  transition: all 0.3s ease;
+}
+
+.glass-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.glass-effect:hover::before {
+  left: 100%;
+}
+
+/* Mac Mini Animation - plays once and stops */
+@keyframes macMiniAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.mac-mini-svg {
+  will-change: transform, opacity;
+  animation: macMiniAnimation 3s forwards;
+}
+
+/* Mac Mini Stack Animation */
+@keyframes macMiniFade {
+  0% {
+    opacity: 0;
+    filter: blur(2px) brightness(0.9);
+    transform: translateY(0) translateX(-50%) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0) brightness(1);
+    transform: translateY(0) translateX(-50%) scale(1);
+  }
+}
+
+.mac-mini-rise {
+  will-change: opacity, filter, transform;
+  animation: macMiniFade 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+/* Scroll-triggered Mac Mini animations */
+.animate-mac-mini {
+  animation: macMiniFade 1.2s ease-out forwards;
+  will-change: opacity, filter, transform;
 }
