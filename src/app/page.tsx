@@ -133,7 +133,7 @@ export default function Home() {
       </MotionDiv>
 
       {/* Attribution text */}
-      <div className="text-center text-white text-sm opacity-50 mb-8">
+      <div className="text-center text-black text-sm opacity-50 mb-8">
         Design & background inspired by <a href="https://un.ms/pile" target="_blank" rel="noopener noreferrer" className="underline">un.ms/pile</a>
       </div>
 
