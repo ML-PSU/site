@@ -1,4 +1,4 @@
-# ML@PSU Website
+# ML@PSU Websitee
 
 This is the official website for the Machine Learning Club at Penn State University. Built with Next.js, TypeScript, and Tailwind CSS.
 
