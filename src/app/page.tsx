@@ -46,26 +46,6 @@ const sponsors = [
 ]
 
 export default function Home() {
-  const [footerOffset, setFooterOffset] = useState(100) // Start fully hidden
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY
-      const windowHeight = window.innerHeight
-      const documentHeight = document.documentElement.scrollHeight
-      
-      // Calculate how far we are from the bottom
-      const distanceFromBottom = documentHeight - (scrollTop + windowHeight)
-      
-      // Calculate offset (0 = fully visible, 100 = fully hidden)
-      const offset = Math.max(0, Math.min(100, distanceFromBottom))
-      setFooterOffset(offset)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
     <div className="min-h-screen bg-white pb-16">
       <MotionDiv 
