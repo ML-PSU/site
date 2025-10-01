@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
   const type = searchParams.get('type') ?? 'default'
 
   // Fetch the logo
-  const logoResponse = await fetch(new URL('/logo.png', request.url))
+  const logoResponse = await fetch(new URL('/logo.svg', request.url))
   const logoBuffer = await logoResponse.arrayBuffer()
 
   return new ImageResponse(
