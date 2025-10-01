@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { PT_Serif } from 'next/font/google'
+import { PT_Serif, Funnel_Display } from 'next/font/google'
 import './globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import Footer from '../components/Footer'
@@ -9,6 +9,13 @@ const ptSerif = PT_Serif({
   weight: ['400', '700'],
   subsets: ['latin'],
   display: 'swap',
+})
+
+const funnelDisplay = Funnel_Display({ 
+  weight: ['600'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-funnel-display',
 })
 
 export const metadata: Metadata = {
@@ -46,9 +53,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={ptSerif.className}>
+      <body className={`${ptSerif.className} ${funnelDisplay.variable}`}>
         <Navbar />
-        <main className="pt-16">
+        <main className="pt-28">
           {children}
         </main>
         <Footer />
