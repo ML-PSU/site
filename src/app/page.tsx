@@ -38,12 +38,11 @@ const pastSpeakers = [
 
 
 const sponsors = [
-  { name: 'warp', image: '/sponsor/warp.png' },
-  { name: 'pplx', image: '/sponsor/pplx.png' },
-  { name: 'modal labs', image: '/sponsor/modal.png' },
-  { name: 'psu', image: '/sponsor/psu.png' },
-  { name: 'obsbot', image: '/sponsor/obsbot.png' },
-  { name: 'upac', image: '/sponsor/UPAC.png' },
+  { name: 'warp', image: '/sponsor/warp.png', link: 'https://www.warp.dev/' },
+  { name: 'pplx', image: '/sponsor/pplx.png', link: 'https://www.perplexity.ai/' },
+  { name: 'modal labs', image: '/sponsor/modal.png', link: 'https://modal.com/' },
+  { name: 'psu', image: '/sponsor/psu.png', link: 'https://www.psu.edu/' },
+  { name: 'obsbot', image: '/sponsor/obsbot.png', link: 'https://www.obsbot.com/' },
 ]
 
 export default function Home() {
@@ -179,7 +178,13 @@ export default function Home() {
             <h2 className="text-xl font-bold mb-8">Our Sponsors</h2>
             <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto">
               {sponsors.map((sponsor, index) => (
-                <div key={sponsor.name} className="flex items-center justify-center p-6 bg-gray-100 rounded-lg border border-gray-200">
+                <Link
+                  key={sponsor.name}
+                  href={sponsor.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center p-6 bg-gray-100 rounded-lg border border-gray-200 hover:bg-gray-200 transition-colors"
+                >
                   <Image
                     src={sponsor.image}
                     alt={sponsor.name}
@@ -187,7 +192,7 @@ export default function Home() {
                     height={60}
                     className="object-contain h-12"
                   />
-                </div>
+                </Link>
               ))}
             </div>
           </MotionDiv>
