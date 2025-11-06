@@ -4,98 +4,98 @@ import { MotionDiv, fadeIn, stagger } from '../../components/motion'
 
 export default function BecomeASpeaker() {
   return (
-    <div className="min-h-screen bg-black">
-      <MotionDiv 
+    <div className="min-h-screen bg-cream">
+      <MotionDiv
         className="max-w-4xl mx-auto px-4 py-8 md:py-16"
         initial="hidden"
         animate="visible"
         variants={stagger}
       >
         {/* Navigation */}
-        <MotionDiv 
+        <MotionDiv
           variants={fadeIn}
-          className="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-12 pt-8 text-sm md:text-base"
+          className="flex flex-wrap justify-center items-center gap-6 md:gap-10 mb-16 pt-8 text-sm md:text-base"
         >
-          <Link href="/" className="hover:text-[#FA8072] transition-colors flex items-center gap-1">
+          <Link href="/" className="text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
             home <ArrowUpRight className="w-4 h-4" />
           </Link>
-          <Link href="/about" className="hover:text-[#FA8072] transition-colors flex items-center gap-1">
+          <Link href="/about" className="text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
             about <ArrowUpRight className="w-4 h-4" />
           </Link>
-          <Link href="/resources" className="hover:text-[#FA8072] transition-colors flex items-center gap-1">
+          <Link href="/resources" className="text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
             resources <ArrowUpRight className="w-4 h-4" />
           </Link>
-          <Link href="/contact" className="hover:text-[#FA8072] transition-colors flex items-center gap-1">
+          <Link href="/contact" className="text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
             contact <ArrowUpRight className="w-4 h-4" />
           </Link>
         </MotionDiv>
 
         {/* Content */}
-        <MotionDiv variants={fadeIn} className="space-y-12">
-          <h1 className="text-3xl font-mono tracking-tight">become a speaker</h1>
+        <MotionDiv variants={fadeIn} className="space-y-12 max-w-3xl mx-auto">
+          <h1 className="text-5xl font-serif tracking-tight text-gray-900">Become a Speaker</h1>
           
           <section className="space-y-6">
-            <p className="text-gray-300 leading-relaxed">
-              we love hearing from people who are passionate about what they do! if you&apos;re interested in speaking at one of our events, 
-              just <Link href="/contact" className="text-[#FA8072] hover:opacity-80 inline-flex items-center">
+            <p className="text-gray-800 text-lg leading-relaxed">
+              We love hearing from people who are passionate about what they do! If you&apos;re interested in speaking at one of our events,
+              just <Link href="/contact" className="text-red-600 hover:text-red-700 inline-flex items-center font-medium border-b border-red-600">
                 shoot us an email <ArrowUpRight className="w-4 h-4 ml-1" />
-              </Link>. we&apos;ll review your proposal and send you a calendar booking link.
+              </Link>. We&apos;ll review your proposal and send you a calendar booking link.
             </p>
 
-            <p className="text-gray-300 leading-relaxed">
-              you can choose to speak either in-person or online. we do prefer in-person talks and can provide travel and accommodation 
+            <p className="text-gray-800 text-lg leading-relaxed">
+              You can choose to speak either in-person or online. We do prefer in-person talks and can provide travel and accommodation
               arrangements at our convenience.
             </p>
           </section>
 
-          <section className="space-y-4">
-            <h2 className="text-xl font-mono">you might be a great fit if you:</h2>
-            <ul className="text-gray-300 space-y-2 list-none">
-              <li className="flex items-center gap-2">
-                <ArrowUpRight className="w-4 h-4 text-[#FA8072]" />
-                have done something really cool
+          <section className="space-y-6">
+            <h2 className="text-3xl font-serif text-gray-900">You might be a great fit if you:</h2>
+            <ul className="text-gray-800 space-y-4 list-none text-lg">
+              <li className="flex items-start gap-3 pl-4 border-l-2 border-gray-300">
+                <span className="text-red-600 font-medium">→</span>
+                <span>Have done something really cool</span>
               </li>
-              <li className="flex items-center gap-2">
-                <ArrowUpRight className="w-4 h-4 text-[#FA8072]" />
-                are distinguished in your field
+              <li className="flex items-start gap-3 pl-4 border-l-2 border-gray-300">
+                <span className="text-red-600 font-medium">→</span>
+                <span>Are distinguished in your field</span>
               </li>
-              <li className="flex items-center gap-2">
-                <ArrowUpRight className="w-4 h-4 text-[#FA8072]" />
-                have unique experiences to share
+              <li className="flex items-start gap-3 pl-4 border-l-2 border-gray-300">
+                <span className="text-red-600 font-medium">→</span>
+                <span>Have unique experiences to share</span>
               </li>
-              <li className="flex items-center gap-2">
-                <ArrowUpRight className="w-4 h-4 text-[#FA8072]" />
-                are a researcher in ai/ml
+              <li className="flex items-start gap-3 pl-4 border-l-2 border-gray-300">
+                <span className="text-red-600 font-medium">→</span>
+                <span>Are a researcher in AI/ML</span>
               </li>
-              <li className="flex items-center gap-2">
-                <ArrowUpRight className="w-4 h-4 text-[#FA8072]" />
-                work in academia
+              <li className="flex items-start gap-3 pl-4 border-l-2 border-gray-300">
+                <span className="text-red-600 font-medium">→</span>
+                <span>Work in academia</span>
               </li>
             </ul>
           </section>
 
-          <section className="space-y-4">
-            <h2 className="text-xl font-mono">what&apos;s in it for you?</h2>
-            <ul className="text-gray-300 space-y-2 list-none">
-              <li className="flex items-center gap-2">
-                <ArrowUpRight className="w-4 h-4 text-[#FA8072]" />
-                connect with an engaged audience passionate about technology
+          <section className="space-y-6">
+            <h2 className="text-3xl font-serif text-gray-900">What&apos;s in it for you?</h2>
+            <ul className="text-gray-800 space-y-4 list-none text-lg">
+              <li className="flex items-start gap-3 pl-4 border-l-2 border-gray-300">
+                <span className="text-red-600 font-medium">→</span>
+                <span>Connect with an engaged audience passionate about technology</span>
               </li>
-              <li className="flex items-center gap-2">
-                <ArrowUpRight className="w-4 h-4 text-[#FA8072]" />
-                network with other speakers and industry professionals
+              <li className="flex items-start gap-3 pl-4 border-l-2 border-gray-300">
+                <span className="text-red-600 font-medium">→</span>
+                <span>Network with other speakers and industry professionals</span>
               </li>
-              <li className="flex items-center gap-2">
-                <ArrowUpRight className="w-4 h-4 text-[#FA8072]" />
-                get your talk recorded and featured on our platform
+              <li className="flex items-start gap-3 pl-4 border-l-2 border-gray-300">
+                <span className="text-red-600 font-medium">→</span>
+                <span>Get your talk recorded and featured on our platform</span>
               </li>
-              <li className="flex items-center gap-2">
-                <ArrowUpRight className="w-4 h-4 text-[#FA8072]" />
-                build your personal brand and speaking portfolio
+              <li className="flex items-start gap-3 pl-4 border-l-2 border-gray-300">
+                <span className="text-red-600 font-medium">→</span>
+                <span>Build your personal brand and speaking portfolio</span>
               </li>
             </ul>
-            <p className="text-sm text-gray-400 mt-4">
-              with your consent, we record all talks and make them available on our website and youtube channel, helping you reach 
+            <p className="text-sm text-gray-600 mt-4 pl-4">
+              With your consent, we record all talks and make them available on our website and YouTube channel, helping you reach
               an even wider audience.
             </p>
           </section>

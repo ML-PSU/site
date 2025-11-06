@@ -5,13 +5,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-rgb: 0, 0, 0;
+  --foreground-rgb: 26, 26, 26;
+  --background-rgb: 250, 249, 246;
+  --accent-rgb: 220, 38, 38;
+  --muted-rgb: 115, 115, 115;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+  font-family: var(--font-inter), sans-serif;
 }
 
 .font-pixel {
@@ -32,7 +35,7 @@ body {
   white-space: nowrap;
   animation: scroll 60s linear infinite;
   display: inline-block;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(26, 26, 26, 0.5);
 }
 
 .scrolling-container {
@@ -41,10 +44,10 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(250, 249, 246, 0.85);
   backdrop-filter: blur(8px);
   padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.1);
 }
 
 .hover-glow {
@@ -54,8 +57,7 @@ body {
 }
 
 .hover-glow:hover {
-  color: rgba(255, 255, 255, 1);
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  color: rgb(var(--accent-rgb));
   transform: scale(1.05) translateY(-1px);
 }
 
@@ -65,7 +67,7 @@ body {
   align-items: center;
   text-decoration: none;
   padding-right: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.2);
 }
 
 .link-style::after {
@@ -78,21 +80,23 @@ body {
 }
 
 .link-style:hover {
-  border-bottom-color: rgba(255, 255, 255, 0.8);
+  border-bottom-color: rgb(var(--accent-rgb));
+  color: rgb(var(--accent-rgb));
 }
 
 .join-button {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  background: rgba(26, 26, 26, 0.05);
+  color: rgb(var(--foreground-rgb));
   padding: 0.75rem 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(26, 26, 26, 0.2);
   border-radius: 4px;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
 }
 
 .join-button:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(26, 26, 26, 0.1);
+  border-color: rgb(var(--accent-rgb));
   transform: translateY(-2px);
 }
 
@@ -108,8 +112,16 @@ body {
 }
 
 @layer components {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-instrument-serif), serif;
+    font-weight: 400;
+  }
+
   h1 {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    letter-spacing: -0.01em;
   }
 }

@@ -38,33 +38,33 @@ const scrollingText = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black">
-      <MotionDiv 
+    <div className="min-h-screen bg-cream">
+      <MotionDiv
         className="max-w-4xl mx-auto px-4 py-8 md:py-16"
         initial="hidden"
         animate="visible"
         variants={stagger}
       >
-        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-12 pt-8 text-sm md:text-base">
-          <Link href="/about" className="hover:text-[#FA8072] transition-colors flex items-center gap-1">
-            about <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
+        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 mb-16 pt-8 text-sm md:text-base">
+          <Link href="/about" className="text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
+            about <ArrowUpRight className="w-4 h-4" />
           </Link>
-          <Link href="/resources" className="hover:text-[#FA8072] transition-colors flex items-center gap-1">
-            resources <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
+          <Link href="/resources" className="text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
+            resources <ArrowUpRight className="w-4 h-4" />
           </Link>
-          <Link href="/articles" className="hover:text-[#FA8072] transition-colors flex items-center gap-1">
-            articles <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
+          <Link href="/articles" className="text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
+            articles <ArrowUpRight className="w-4 h-4" />
           </Link>
-          <Link href="/contact" className="hover:text-[#FA8072] transition-colors flex items-center gap-1">
-            contact us <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
+          <Link href="/contact" className="text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 font-medium">
+            contact us <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
 
-        <MotionDiv 
-          className="flex justify-between items-center mb-24"
+        <MotionDiv
+          className="flex justify-between items-center mb-28"
           variants={fadeIn}
         >
-          <h1 className="text-4xl font-mono tracking-tight">ml@psu</h1>
+          <h1 className="text-5xl md:text-6xl font-serif tracking-tight">ml@psu</h1>
           <Image
             src="/logo.svg"
             alt="ML@PSU Logo"
@@ -88,25 +88,25 @@ export default function Home() {
           </div>
         </MotionDiv>
 
-        <MotionDiv 
-          className="text-left max-w-2xl mx-auto space-y-8 mb-32"
+        <MotionDiv
+          className="text-left max-w-2xl mx-auto space-y-6 mb-32"
           variants={fadeIn}
         >
-          <p className="text-gray-300 leading-relaxed whitespace-pre-wrap">
+          <p className="text-gray-800 text-lg leading-relaxed">
             Hey, nice to meet you through the web! We&apos;re just a group of friends who got really excited about machine learning and wanted to create a space where we could geek out together.
           </p>
-          <p className="text-gray-300 leading-relaxed whitespace-pre-wrap">
+          <p className="text-gray-800 text-lg leading-relaxed">
             We started this club because we wanted a place to meet other cool people interested in ML, invite interesting speakers, and get some funding to support members building awesome projects or attending conferences.
           </p>
-          <p className="text-gray-300 leading-relaxed whitespace-pre-wrap">
+          <p className="text-gray-800 text-lg leading-relaxed">
             We regularly hold events - sometimes it&apos;s a guest speaker sharing their work, other times it&apos;s casual workshops where we walk through cool ML concepts together. We&apos;ve got a pretty active Discord server too, where we share everything from research papers to the latest AI news and tools.
           </p>
-          <p className="text-gray-300 leading-relaxed whitespace-pre-wrap">
+          <p className="text-gray-800 text-lg leading-relaxed">
             If you&apos;re motivated and curious about ML, we can help you out with resources like subscriptions, and maybe even take you along to conferences. We&apos;re all about supporting each other&apos;s learning journey!
           </p>
         </MotionDiv>
 
-        <MotionDiv 
+        <MotionDiv
           className="text-center flex flex-col md:flex-row justify-center gap-4 md:gap-8 mb-32"
           variants={fadeIn}
         >
@@ -114,53 +114,53 @@ export default function Home() {
             href="https://docs.google.com/forms/d/e/1FAIpQLSelQdK7kY8PMDSgemp9ksCSRHwji2qg3HgybPZuGuFMFrSVLg/viewform?usp=sf_link"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lg hover:text-[#FA8072] transition-colors flex items-center justify-center gap-1"
+            className="text-lg text-gray-800 hover:text-red-600 transition-colors flex items-center justify-center gap-1 font-medium"
           >
-            become a member <ArrowUpRight className="w-4 h-4 text-[#FA8072]" />
+            become a member <ArrowUpRight className="w-5 h-5" />
           </Link>
           <Link
             href="/become-a-speaker"
-            className="text-lg hover:text-[#FA8072] transition-colors flex items-center justify-center gap-1"
+            className="text-lg text-gray-800 hover:text-red-600 transition-colors flex items-center justify-center gap-1 font-medium"
           >
-            become a speaker <ArrowUpRight className="w-4 h-4 text-[#FA8072]" />
+            become a speaker <ArrowUpRight className="w-5 h-5" />
           </Link>
         </MotionDiv>
 
-        <MotionDiv 
-          className="space-y-8 mb-32"
+        <MotionDiv
+          className="space-y-10 mb-32 max-w-3xl mx-auto"
           variants={fadeIn}
         >
-          <h2 className="text-2xl font-bold">Our Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <h2 className="text-4xl font-serif">Our Team</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {staff.map((member) => (
-              <div key={member.name} className="space-y-2">
-                <Link 
-                  href={member.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-lg hover:text-[#FA8072] transition-colors flex items-center gap-1"
+              <div key={member.name} className="space-y-1 border-l-2 border-gray-300 pl-4 hover:border-red-600 transition-colors">
+                <Link
+                  href={member.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xl text-gray-900 hover:text-red-600 transition-colors flex items-center gap-1 font-medium"
                 >
                   {member.name} <ArrowUpRight className="w-4 h-4" />
                 </Link>
-                <p className="text-gray-400">{member.role}</p>
+                <p className="text-gray-600 text-sm">{member.role}</p>
               </div>
             ))}
           </div>
         </MotionDiv>
 
-        <MotionDiv 
-          className="space-y-8 mb-16"
+        <MotionDiv
+          className="space-y-8 mb-16 max-w-3xl mx-auto"
           variants={fadeIn}
         >
-          <h2 className="text-2xl font-bold">Past Speakers</h2>
+          <h2 className="text-4xl font-serif">Past Speakers</h2>
           <div className="space-y-4">
             {pastSpeakers.map((speaker) => (
-              <div key={speaker.name}>
-                <Link 
-                  href={speaker.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-lg hover:text-[#FA8072] transition-colors flex items-center gap-1"
+              <div key={speaker.name} className="border-l-2 border-gray-300 pl-4 hover:border-red-600 transition-colors">
+                <Link
+                  href={speaker.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xl text-gray-900 hover:text-red-600 transition-colors flex items-center gap-1 font-medium"
                 >
                   {speaker.name} <ArrowUpRight className="w-4 h-4" />
                 </Link>
