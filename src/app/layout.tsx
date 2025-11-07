@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Instrument_Serif } from 'next/font/google'
 import './globals.css'
 import { Analytics } from '@vercel/analytics/react'
+import Footer from '../components/Footer'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const instrumentSerif = Instrument_Serif({
@@ -46,6 +47,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${instrumentSerif.variable} font-sans`}>
         {children}
+        <Footer />
         <Analytics />
       </body>
     </html>

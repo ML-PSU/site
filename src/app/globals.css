@@ -125,4 +125,12 @@ body {
   h2 {
     letter-spacing: -0.01em;
   }
+
+  .bg-cream {
+    background-color: rgb(var(--background-rgb));
+  }
+
+  .font-serif {
+    font-family: var(--font-instrument-serif), serif;
+  }
 }
