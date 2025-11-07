@@ -7,11 +7,6 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
   const title = searchParams.get('title') ?? 'ML@PSU'
   const description = searchParams.get('description') ?? 'Machine Learning Club at Penn State University'
-  const type = searchParams.get('type') ?? 'default'
-
-  // Fetch the logo
-  const logoResponse = await fetch(new URL('/logo.svg', request.url))
-  const logoBuffer = await logoResponse.arrayBuffer()
 
   return new ImageResponse(
     (
@@ -23,13 +18,13 @@ export async function GET(request: NextRequest) {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: 'white',
-          fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+          backgroundColor: '#FAF9F6',
+          fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
           padding: '80px 100px',
           position: 'relative',
         }}
       >
-        {/* Subtle background pattern like Notion */}
+        {/* Stronger background pattern for better visibility */}
         <div
           style={{
             position: 'absolute',
@@ -37,13 +32,13 @@ export async function GET(request: NextRequest) {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: 'radial-gradient(circle at 20px 20px, #f8f9fa 1px, transparent 0)',
+            backgroundImage: 'radial-gradient(circle at 20px 20px, rgba(220, 38, 38, 0.08) 1px, transparent 0)',
             backgroundSize: '40px 40px',
-            opacity: 0.5,
+            opacity: 0.6,
           }}
         />
-        
-        {/* Content container */}
+
+        {/* Content container with better contrast */}
         <div
           style={{
             display: 'flex',
@@ -53,80 +48,77 @@ export async function GET(request: NextRequest) {
             width: '100%',
             maxWidth: '1000px',
             zIndex: 1,
+            backgroundColor: 'rgba(255, 255, 255, 0.85)',
+            padding: '60px',
+            borderRadius: '24px',
+            border: '2px solid rgba(220, 38, 38, 0.15)',
+            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.12)',
           }}
         >
-          {/* Header with logo */}
+          {/* Brand name with strong visibility */}
           <div
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '24px',
-              marginBottom: '60px',
+              gap: '16px',
+              marginBottom: '40px',
             }}
           >
-            {/* Logo */}
-            <img
-              src={`data:image/png;base64,${Buffer.from(logoBuffer).toString('base64')}`}
-              alt="ML@PSU Logo"
-              style={{
-                width: '80px',
-                height: '80px',
-              }}
-            />
-            {/* Brand name */}
             <div
               style={{
-                fontSize: '48px',
+                fontSize: '42px',
                 fontWeight: '700',
-                color: '#000',
-                fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+                color: '#1a1a1a',
+                letterSpacing: '-0.02em',
               }}
             >
               ML@PSU
             </div>
           </div>
-          
-          {/* Main title */}
+
+          {/* Main title with strong contrast */}
           <h1
             style={{
-              fontSize: type === 'blog' ? '56px' : '64px',
+              fontSize: '64px',
               fontWeight: '700',
-              color: '#000',
+              color: '#1a1a1a',
               margin: '0 0 32px 0',
               lineHeight: 1.1,
               width: '100%',
+              letterSpacing: '-0.02em',
             }}
           >
             {title}
           </h1>
-          
-          {/* Description */}
+
+          {/* Description with better readability */}
           <p
             style={{
               fontSize: '28px',
-              color: '#64748b',
+              color: '#4a5568',
               margin: '0',
               lineHeight: 1.4,
               width: '100%',
-              fontWeight: '400',
+              fontWeight: '500',
             }}
           >
             {description}
           </p>
-          
-          {/* Bottom subtle branding */}
-          <div
-            style={{
-              position: 'absolute',
-              bottom: '40px',
-              right: '100px',
-              fontSize: '20px',
-              color: '#cbd5e1',
-              fontWeight: '500',
-            }}
-          >
-            mlpsu.org
-          </div>
+        </div>
+
+        {/* Bottom branding with better visibility */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '50px',
+            right: '100px',
+            fontSize: '22px',
+            color: '#9ca3af',
+            fontWeight: '600',
+            letterSpacing: '0.05em',
+          }}
+        >
+          mlpsu.org
         </div>
       </div>
     ),

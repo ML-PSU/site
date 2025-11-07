@@ -1,21 +1,14 @@
 import type { Metadata } from 'next'
-import { PT_Serif, Funnel_Display } from 'next/font/google'
+import { Inter, Instrument_Serif } from 'next/font/google'
 import './globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
 
-const ptSerif = PT_Serif({ 
-  weight: ['400', '700'],
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
-  display: 'swap',
-})
-
-const funnelDisplay = Funnel_Display({ 
-  weight: ['600'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-funnel-display',
+  weight: ['400'],
+  variable: '--font-instrument-serif',
 })
 
 export const metadata: Metadata = {
@@ -43,7 +36,7 @@ export const metadata: Metadata = {
     title: 'ML@PSU',
     description: 'Machine Learning Club at Penn State University',
     images: ['/api/og?title=ML@PSU&description=Machine Learning Club at Penn State University'],
-  }
+  },
 }
 
 export default function RootLayout({
@@ -53,11 +46,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${ptSerif.className} ${funnelDisplay.variable}`}>
-        <Navbar />
-        <main className="pt-28">
-          {children}
-        </main>
+      <body className={`${inter.variable} ${instrumentSerif.variable} font-sans`}>
+        {children}
         <Footer />
         <Analytics />
       </body>

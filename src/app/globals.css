@@ -5,13 +5,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
+  --foreground-rgb: 26, 26, 26;
+  --background-rgb: 250, 249, 246;
+  --accent-rgb: 220, 38, 38;
+  --muted-rgb: 115, 115, 115;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+  font-family: var(--font-inter), sans-serif;
 }
 
 .font-pixel {
@@ -28,8 +31,85 @@ body {
   }
 }
 
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
 
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.scrolling-text {
+  white-space: nowrap;
+  animation: scroll 60s linear infinite;
+  display: inline-block;
+  color: rgba(26, 26, 26, 0.65);
+}
+
+.scrolling-container {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(250, 249, 246, 0.9);
+  backdrop-filter: blur(12px);
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.15);
+  z-index: 50;
+}
+
+.hover-glow {
+  display: inline-block;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.hover-glow:hover {
+  color: rgb(var(--accent-rgb));
+  transform: scale(1.05) translateY(-1px);
+}
 
 .link-style {
   position: relative;
@@ -37,7 +117,7 @@ body {
   align-items: center;
   text-decoration: none;
   padding-right: 1.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.2);
 }
 
 .link-style::after {
@@ -50,21 +130,23 @@ body {
 }
 
 .link-style:hover {
-  border-bottom-color: rgba(0, 0, 0, 0.8);
+  border-bottom-color: rgb(var(--accent-rgb));
+  color: rgb(var(--accent-rgb));
 }
 
 .join-button {
-  background: rgba(0, 0, 0, 0.1);
-  color: black;
+  background: rgba(26, 26, 26, 0.05);
+  color: rgb(var(--foreground-rgb));
   padding: 0.75rem 1.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(26, 26, 26, 0.2);
   border-radius: 4px;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
 }
 
 .join-button:hover {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(26, 26, 26, 0.1);
+  border-color: rgb(var(--accent-rgb));
   transform: translateY(-2px);
 }
 
@@ -80,8 +162,25 @@ body {
 }
 
 @layer components {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-instrument-serif), serif;
+    font-weight: 400;
+  }
+
   h1 {
-    letter-spacing: -0.04em;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    letter-spacing: -0.01em;
+  }
+
+  .bg-cream {
+    background-color: rgb(var(--background-rgb));
+  }
+
+  .font-serif {
+    font-family: var(--font-instrument-serif), serif;
   }
 }
 

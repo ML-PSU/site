@@ -6,32 +6,31 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'About ML@PSU',
-  description: 'Learn about ML@PSU and our mission to advance machine learning education and research at Penn State.',
+  description: 'Learn about ML@PSU and our mission to advance machine learning education and research.',
   openGraph: {
     title: 'About ML@PSU',
-    description: 'Learn about ML@PSU and our mission to advance machine learning education and research at Penn State.',
+    description: 'Learn about ML@PSU and our mission to advance machine learning education and research.',
     images: [
       {
-        url: '/api/og?title=About ML@PSU&description=Our mission to advance machine learning education and research at Penn State',
+        url: '/api/og?title=About ML@PSU&description=Learn about our mission to advance machine learning education',
         width: 1200,
         height: 630,
-        alt: 'About ML@PSU'
       }
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About ML@PSU',
-    description: 'Learn about ML@PSU and our mission to advance machine learning education and research at Penn State.',
-    images: ['/api/og?title=About ML@PSU&description=Our mission to advance machine learning education and research at Penn State'],
-  }
+    description: 'Learn about ML@PSU and our mission to advance machine learning education and research.',
+    images: ['/api/og?title=About ML@PSU&description=Learn about our mission to advance machine learning education'],
+  },
 }
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-white pb-16">
-      <MotionDiv 
-        className="max-w-4xl mx-auto px-4 py-8 md:py-16"
+    <div className="min-h-screen bg-cream">
+      <MotionDiv
+        className="max-w-4xl mx-auto px-4 py-8"
         initial="hidden"
         animate="visible"
         variants={stagger}
@@ -39,111 +38,127 @@ export default function AboutPage() {
         <MotionDiv 
           className="flex justify-center items-center mb-24 mt-8"
           variants={fadeIn}
+          className="flex flex-wrap justify-center items-center gap-6 md:gap-10 mb-16 pt-8 text-sm md:text-base"
         >
-          <h1 className="text-4xl font-mono tracking-tight text-black text-center">About ML@PSU</h1>
+          <Link
+            href="/"
+            className="text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 font-medium"
+          >
+            home <ArrowUpRight className="w-4 h-4" />
+          </Link>
+          <Link
+            href="/about"
+            className="text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 font-medium"
+          >
+            about <ArrowUpRight className="w-4 h-4" />
+          </Link>
+          <Link
+            href="/articles"
+            className="text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 font-medium"
+          >
+            articles <ArrowUpRight className="w-4 h-4" />
+          </Link>
+          <Link
+            href="/contact"
+            className="text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 font-medium"
+          >
+            contact <ArrowUpRight className="w-4 h-4" />
+          </Link>
         </MotionDiv>
 
-        <MotionDiv 
-          className="text-left max-w-2xl mx-auto space-y-8 mb-32"
-          variants={fadeIn}
-        >
-          <div className="space-y-12 text-black">
-            <div>
-              <h2 className="text-xl font-bold mb-4 text-black">
+        {/* Content */}
+        <div className="max-w-3xl mx-auto">
+          <MotionDiv
+            variants={fadeIn}
+            className="mb-16"
+          >
+            <h1 className="text-5xl md:text-6xl font-serif leading-tight">
+              <span className="text-red-600">ML@PSU</span> is a community of{' '}
+              <span className="text-gray-900">machine learning enthusiasts</span>
+            </h1>
+          </MotionDiv>
+
+          <div className="space-y-16">
+            <MotionDiv
+              variants={fadeIn}
+              className="space-y-4"
+            >
+              <h2 className="text-3xl font-serif text-gray-900">
                 Our Mission
               </h2>
-              <p className="leading-relaxed text-black">
-                We&apos;re on a mission to make machine learning education accessible, engaging, and fun. 
-                Through workshops, talks, and hands-on projects, we help students dive into the 
+              <p className="text-lg leading-relaxed text-gray-800">
+                We&apos;re on a mission to make machine learning education accessible, engaging, and fun.
+                Through <span className="font-medium text-red-600">workshops</span>, <span className="font-medium text-red-600">talks</span>,
+                and <span className="font-medium text-red-600">hands-on projects</span>, we help students dive into the
                 exciting world of AI.
               </p>
             </div>
 
-            <div>
-              <h2 className="text-xl font-bold mb-4 text-black">
+            <MotionDiv
+              variants={fadeIn}
+              className="space-y-6"
+            >
+              <h2 className="text-3xl font-serif text-gray-900">
                 What We Do
               </h2>
-              <ul className="space-y-2 leading-relaxed">
-                <li className="flex items-start gap-2">
-                  <span className="text-black">•</span>
-                  Host weekly workshops and tech talks
+              <ul className="space-y-4 text-lg text-gray-800">
+                <li className="flex items-start gap-3 pl-4 border-l-2 border-gray-300">
+                  <span className="text-red-600 font-medium">→</span>
+                  <span>Host weekly workshops and tech talks</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-black">•</span>
-                  Organize hands-on coding sessions
+                <li className="flex items-start gap-3 pl-4 border-l-2 border-gray-300">
+                  <span className="text-red-600 font-medium">→</span>
+                  <span>Organize hands-on coding sessions</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-black">•</span>
-                  Connect students with industry experts
+                <li className="flex items-start gap-3 pl-4 border-l-2 border-gray-300">
+                  <span className="text-red-600 font-medium">→</span>
+                  <span>Connect students with industry experts</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-black">•</span>
-                  Build cool ML projects together
+                <li className="flex items-start gap-3 pl-4 border-l-2 border-gray-300">
+                  <span className="text-red-600 font-medium">→</span>
+                  <span>Build cool ML projects together</span>
                 </li>
               </ul>
             </div>
 
-            <div>
-              <h2 className="text-xl font-bold mb-4 text-black">
-                Why Join Us?
+            <MotionDiv
+              variants={fadeIn}
+              className="space-y-4"
+            >
+              <h2 className="text-3xl font-serif text-gray-900">
+                Join Us
               </h2>
-              <p className="leading-relaxed text-black">
-                Whether you&apos;re a complete beginner or a seasoned ML engineer, there&apos;s a place for you here. 
-                We believe in learning together and helping each other grow through hands-on projects, expert mentorship, and collaborative learning.
+              <p className="text-lg leading-relaxed text-gray-800">
+                Whether you&apos;re a <span className="font-medium text-red-600">complete beginner</span> or
+                a <span className="font-medium text-red-600">seasoned ML engineer</span>, there&apos;s a place for you here.
+                We believe in learning together and helping each other grow.
               </p>
             </div>
 
-          </div>
-        </MotionDiv>
-
-        <div className="flex flex-col items-center justify-center gap-6 mb-32">
-          <div className="flex flex-wrap justify-center gap-4 w-full max-w-2xl">
-            <a
-              href="https://tally.so/r/mJWMy7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-black text-white px-6 py-3 rounded-full font-medium flex-1 min-w-[180px]
-                       text-center font-bold hover:bg-gray-800 transition-colors
-                       border-2 border-black"
+            <MotionDiv
+              variants={fadeIn}
+              className="space-y-8 pt-8"
             >
-              Join ML@PSU
-            </a>
-
-            <Link
-              href="/become-a-speaker"
-              className="bg-black text-white px-6 py-3 rounded-full font-medium flex-1 min-w-[180px]
-                       text-center font-bold hover:bg-gray-800 transition-colors
-                       border-2 border-black"
-            >
-              Become a Speaker
-            </Link>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-6 mt-2">
-            <a
-              href="https://discord.gg/4BUhteYYgT"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-black underline hover:text-[#5865F2] transition-all duration-200 underline-offset-4"
-            >
-              Discord
-            </a>
-            <a
-              href="https://groupme.com/join_group/103911031/6hLBvx9a"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-black underline hover:text-[#00AFF0] transition-all duration-200 underline-offset-4"
-            >
-              GroupMe
-            </a>
-            <a
-              href="https://lu.ma/mlpsu"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-black underline hover:text-[#9333ea] transition-all duration-200 underline-offset-4"
-            >
-              Calendar
-            </a>
+              <h2 className="text-3xl font-serif text-gray-900 text-center">
+                Get Involved
+              </h2>
+              <div className="flex flex-wrap gap-6 justify-center">
+                <Link
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSelQdK7kY8PMDSgemp9ksCSRHwji2qg3HgybPZuGuFMFrSVLg/viewform?usp=sf_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xl text-gray-900 hover:text-red-600 transition-colors flex items-center justify-center gap-1 font-medium"
+                >
+                  become a member <ArrowUpRight className="w-5 h-5" />
+                </Link>
+                <Link
+                  href="/become-a-speaker"
+                  className="text-xl text-gray-900 hover:text-red-600 transition-colors flex items-center justify-center gap-1 font-medium"
+                >
+                  become a speaker <ArrowUpRight className="w-5 h-5" />
+                </Link>
+              </div>
+            </MotionDiv>
           </div>
         </div>
       </MotionDiv>
