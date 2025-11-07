@@ -1,6 +1,29 @@
+import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { MotionDiv, fadeIn, stagger } from '../../components/motion'
+
+export const metadata: Metadata = {
+  title: 'Become a Speaker - ML@PSU',
+  description: 'Share your knowledge and experience with the ML@PSU community. Apply to be a speaker at our events.',
+  openGraph: {
+    title: 'Become a Speaker - ML@PSU',
+    description: 'Share your knowledge and experience with the ML@PSU community. Apply to be a speaker at our events.',
+    images: [
+      {
+        url: '/api/og?title=Become a Speaker&description=Share your knowledge with the ML@PSU community',
+        width: 1200,
+        height: 630,
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Become a Speaker - ML@PSU',
+    description: 'Share your knowledge and experience with the ML@PSU community. Apply to be a speaker at our events.',
+    images: ['/api/og?title=Become a Speaker&description=Share your knowledge with the ML@PSU community'],
+  },
+}
 
 export default function BecomeASpeaker() {
   return (

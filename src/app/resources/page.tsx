@@ -6,6 +6,23 @@ import { ArrowUpRight } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'ML@PSU Resources',
   description: 'A collection of machine learning resources for the ML@PSU community.',
+  openGraph: {
+    title: 'ML@PSU Resources',
+    description: 'A collection of machine learning resources for the ML@PSU community.',
+    images: [
+      {
+        url: '/api/og?title=ML@PSU Resources&description=A collection of machine learning resources',
+        width: 1200,
+        height: 630,
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ML@PSU Resources',
+    description: 'A collection of machine learning resources for the ML@PSU community.',
+    images: ['/api/og?title=ML@PSU Resources&description=A collection of machine learning resources'],
+  },
 }
 
 export default function ResourcesPage() {

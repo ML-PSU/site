@@ -14,6 +14,7 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   title: 'ML@PSU',
   description: 'Machine Learning Club at Penn State University',
+  metadataBase: new URL('https://mlpsu.org'),
   openGraph: {
     title: 'ML@PSU',
     description: 'Machine Learning Club at Penn State University',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     siteName: 'ML@PSU',
     images: [
       {
-        url: '/preview.png',
+        url: '/api/og?title=ML@PSU&description=Machine Learning Club at Penn State University',
         width: 1200,
         height: 630,
         alt: 'ML@PSU - Machine Learning Club at Penn State University'
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ML@PSU',
     description: 'Machine Learning Club at Penn State University',
-    images: ['/preview.png'],
+    images: ['/api/og?title=ML@PSU&description=Machine Learning Club at Penn State University'],
   },
 }
 

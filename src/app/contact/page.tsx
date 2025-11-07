@@ -1,5 +1,28 @@
+import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Contact ML@PSU',
+  description: 'Get in touch with the ML@PSU team. We\'d love to hear from you!',
+  openGraph: {
+    title: 'Contact ML@PSU',
+    description: 'Get in touch with the ML@PSU team. We\'d love to hear from you!',
+    images: [
+      {
+        url: '/api/og?title=Contact ML@PSU&description=Get in touch with the ML@PSU team',
+        width: 1200,
+        height: 630,
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact ML@PSU',
+    description: 'Get in touch with the ML@PSU team. We\'d love to hear from you!',
+    images: ['/api/og?title=Contact ML@PSU&description=Get in touch with the ML@PSU team'],
+  },
+}
 
 export default function Contact() {
   return (

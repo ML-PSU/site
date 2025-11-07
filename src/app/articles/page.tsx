@@ -6,6 +6,23 @@ import { ArrowUpRight } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'ML@PSU Articles',
   description: 'Articles and writings about machine learning, AI, and technology.',
+  openGraph: {
+    title: 'ML@PSU Articles',
+    description: 'Articles and writings about machine learning, AI, and technology.',
+    images: [
+      {
+        url: '/api/og?title=ML@PSU Articles&description=Articles and writings about machine learning, AI, and technology',
+        width: 1200,
+        height: 630,
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ML@PSU Articles',
+    description: 'Articles and writings about machine learning, AI, and technology.',
+    images: ['/api/og?title=ML@PSU Articles&description=Articles and writings about machine learning, AI, and technology'],
+  },
 }
 
 interface Article {

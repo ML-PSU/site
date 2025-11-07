@@ -6,6 +6,23 @@ import { MotionDiv, fadeIn, stagger } from '../../components/motion'
 export const metadata: Metadata = {
   title: 'About ML@PSU',
   description: 'Learn about ML@PSU and our mission to advance machine learning education and research.',
+  openGraph: {
+    title: 'About ML@PSU',
+    description: 'Learn about ML@PSU and our mission to advance machine learning education and research.',
+    images: [
+      {
+        url: '/api/og?title=About ML@PSU&description=Learn about our mission to advance machine learning education',
+        width: 1200,
+        height: 630,
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About ML@PSU',
+    description: 'Learn about ML@PSU and our mission to advance machine learning education and research.',
+    images: ['/api/og?title=About ML@PSU&description=Learn about our mission to advance machine learning education'],
+  },
 }
 
 export default function AboutPage() {
