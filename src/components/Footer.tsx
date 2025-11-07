@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 export default function Footer() {
@@ -79,22 +80,17 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Middle section with decorative patterns */}
+        {/* Middle section with large spinning logo */}
         <div className="flex-1 flex items-center justify-center py-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl">
-            {/* Decorative pattern boxes */}
-            <div className="h-40 bg-white/40 backdrop-blur-sm border border-gray-200 rounded-2xl p-6 hover:bg-white/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <div className="text-6xl mb-2">🧠</div>
-              <p className="text-sm text-gray-700 font-medium">Machine Learning</p>
-            </div>
-            <div className="h-40 bg-white/40 backdrop-blur-sm border border-gray-200 rounded-2xl p-6 hover:bg-white/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <div className="text-6xl mb-2">🤝</div>
-              <p className="text-sm text-gray-700 font-medium">Community</p>
-            </div>
-            <div className="h-40 bg-white/40 backdrop-blur-sm border border-gray-200 rounded-2xl p-6 hover:bg-white/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <div className="text-6xl mb-2">🚀</div>
-              <p className="text-sm text-gray-700 font-medium">Innovation</p>
-            </div>
+          <div className="relative">
+            <Image
+              src="/logo.svg"
+              alt="ML@PSU Logo"
+              width={300}
+              height={300}
+              priority
+              className="animate-spin-slow opacity-80 hover:opacity-100 transition-opacity duration-300"
+            />
           </div>
         </div>
 
