@@ -1,7 +1,8 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowUpRight } from 'lucide-react'
 import { MotionDiv, fadeIn, stagger } from '../../components/motion'
+import Image from 'next/image'
+
 
 export const metadata: Metadata = {
   title: 'About ML@PSU',
@@ -34,8 +35,8 @@ export default function AboutPage() {
         animate="visible"
         variants={stagger}
       >
-        {/* Navigation */}
-        <MotionDiv
+        <MotionDiv 
+          className="flex justify-center items-center mb-24 mt-8"
           variants={fadeIn}
           className="flex flex-wrap justify-center items-center gap-6 md:gap-10 mb-16 pt-8 text-sm md:text-base"
         >
@@ -91,7 +92,7 @@ export default function AboutPage() {
                 and <span className="font-medium text-red-600">hands-on projects</span>, we help students dive into the
                 exciting world of AI.
               </p>
-            </MotionDiv>
+            </div>
 
             <MotionDiv
               variants={fadeIn}
@@ -118,7 +119,7 @@ export default function AboutPage() {
                   <span>Build cool ML projects together</span>
                 </li>
               </ul>
-            </MotionDiv>
+            </div>
 
             <MotionDiv
               variants={fadeIn}
@@ -132,7 +133,7 @@ export default function AboutPage() {
                 a <span className="font-medium text-red-600">seasoned ML engineer</span>, there&apos;s a place for you here.
                 We believe in learning together and helping each other grow.
               </p>
-            </MotionDiv>
+            </div>
 
             <MotionDiv
               variants={fadeIn}

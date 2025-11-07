@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 import { MotionDiv, fadeIn, stagger } from '../../components/motion'
 
@@ -123,6 +124,57 @@ export default function BecomeASpeaker() {
             </p>
           </section>
         </MotionDiv>
+
+        <div className="flex flex-col items-center justify-center gap-6 mb-32">
+          <div className="flex flex-wrap justify-center gap-4 w-full max-w-2xl">
+            <Link
+              href="/contact"
+              className="bg-black text-white px-6 py-3 rounded-full font-medium flex-1 min-w-[180px]
+                       text-center font-bold hover:bg-gray-800 transition-colors
+                       border-2 border-black"
+            >
+              Contact Us
+            </Link>
+
+            <a
+              href="https://tally.so/r/mJWMy7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-black text-white px-6 py-3 rounded-full font-medium flex-1 min-w-[180px]
+                       text-center font-bold hover:bg-gray-800 transition-colors
+                       border-2 border-black"
+            >
+              Join ML@PSU
+            </a>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-6 mt-2">
+            <a
+              href="https://discord.gg/4BUhteYYgT"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black underline hover:text-[#5865F2] transition-all duration-200 underline-offset-4"
+            >
+              Discord
+            </a>
+            <a
+              href="https://groupme.com/join_group/103911031/6hLBvx9a"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black underline hover:text-[#00AFF0] transition-all duration-200 underline-offset-4"
+            >
+              GroupMe
+            </a>
+            <a
+              href="https://lu.ma/mlpsu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black underline hover:text-[#9333ea] transition-all duration-200 underline-offset-4"
+            >
+              Calendar
+            </a>
+          </div>
+        </div>
       </MotionDiv>
     </div>
   )

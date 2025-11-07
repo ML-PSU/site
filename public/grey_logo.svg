@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <!-- Linear gradients for top and right circles (gray to transparent) -->
+    <linearGradient id="topGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a1a1aa"/>
+      <stop offset="100%" style="stop-color:#a1a1aa;stop-opacity:0"/>
+    </linearGradient>
+    
+    <!-- Linear gradient for bottom left circle (transparent to gray) -->
+    <linearGradient id="bottomLeftGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#a1a1aa"/>
+      <stop offset="100%" style="stop-color:#a1a1aa;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Three overlapping circles with different gradients -->
+  <g style="mix-blend-mode: multiply">
+    <!-- Top circle -->
+    <circle cx="200" cy="160" r="120" fill="url(#topGradient)"/>
+    <!-- Bottom left circle -->
+    <circle cx="160" cy="240" r="120" fill="url(#bottomLeftGradient)"/>
+    <!-- Bottom right circle -->
+    <circle cx="240" cy="240" r="120" fill="url(#topGradient)"/>
+  </g>
+</svg> 
